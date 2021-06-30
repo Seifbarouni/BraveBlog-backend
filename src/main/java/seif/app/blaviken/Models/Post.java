@@ -1,0 +1,89 @@
+package seif.app.blaviken.Models;
+
+import javax.persistence.Column;
+import javax.persistence.Entity;
+import javax.persistence.GeneratedValue;
+import javax.persistence.Id;
+import javax.persistence.Table;
+
+@Entity
+@Table(name = "post")
+public class Post {
+    @Id
+    @GeneratedValue
+    private Long id;
+    @Column(name = "title", nullable = false)
+    private String title;
+
+    @Column(name = "content", nullable = false)
+    private String content;
+
+    @Column(name = "user", nullable = false)
+    private String user;
+
+    @Column(name = "bg_url", nullable = true)
+    private String bgUrl;
+
+    @Column(name = "created", nullable = false)
+    private String createdAt;
+
+    public Post(String title, String content, String user, String bgUrl, String createdAt) {
+        this.title = title;
+        this.content = content;
+        this.user = user;
+        this.bgUrl = bgUrl;
+        this.createdAt = createdAt;
+    }
+
+    public Post() {
+    }
+
+    public Long getId() {
+        return id;
+    }
+
+    public void setId(Long id) {
+        this.id = id;
+    }
+
+    public String getTitle() {
+        return title;
+    }
+
+    public void setTitle(String title) {
+        this.title = title;
+    }
+
+    public String getContent() {
+        return content;
+    }
+
+    public void setContent(String content) {
+        this.content = content;
+    }
+
+    public String getUser() {
+        return user;
+    }
+
+    public void setUser(String user) {
+        this.user = user;
+    }
+
+    public String getBgUrl() {
+        return bgUrl;
+    }
+
+    public void setBgUrl(String bgUrl) {
+        this.bgUrl = bgUrl;
+    }
+
+    public String getCreatedAt() {
+        return createdAt;
+    }
+
+    public void setCreatedAt(String createdAt) {
+        this.createdAt = createdAt;
+    }
+
+}
