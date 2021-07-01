@@ -13,6 +13,7 @@ import io.jsonwebtoken.Jwts;
 import io.jsonwebtoken.security.Keys;
 import seif.app.blaviken.Models.MyUserDetails;
 
+@Service
 public class Utils {
     private final String SECRET_KEY = "asdfSFS34wfsdfsdfSDSxxxxxxxxxD32dfsddDDerQSNCK34SOWEK5354fdgdf4";
 

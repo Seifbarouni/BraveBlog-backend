@@ -5,7 +5,6 @@ import java.util.Optional;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.security.authentication.AuthenticationManager;
 import org.springframework.security.authentication.UsernamePasswordAuthenticationToken;
-import org.springframework.security.core.Authentication;
 import org.springframework.security.crypto.password.PasswordEncoder;
 import org.springframework.web.bind.annotation.CrossOrigin;
 import org.springframework.web.bind.annotation.GetMapping;
@@ -24,6 +23,7 @@ import seif.app.blaviken.Services.UserService;
 import seif.app.blaviken.Utils.Utils;
 
 @RestController
+@CrossOrigin
 public class UserController {
     @Autowired
     private Utils jwtUtil;
@@ -35,6 +35,11 @@ public class UserController {
     private UserService userService;
     @Autowired
     private PasswordEncoder passwordEncoder;
+
+    @GetMapping("/getUser/{username}")
+    public String getUserImageByUsername(@PathVariable(name = "username") String username) {
+        return userService.getUserByUsername(username).get().getPicUrl();
+    }
 
     @PostMapping("/register")
     public AuthenticationResponse register(@RequestBody UserRegisterModel userRegisterModel) {

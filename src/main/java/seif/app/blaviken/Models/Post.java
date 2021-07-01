@@ -7,7 +7,7 @@ import javax.persistence.Id;
 import javax.persistence.Table;
 
 @Entity
-@Table(name = "post")
+@Table(name = "all_posts")
 public class Post {
     @Id
     @GeneratedValue
@@ -21,18 +21,22 @@ public class Post {
     @Column(name = "user", nullable = false)
     private String user;
 
-    @Column(name = "bg_url", nullable = true)
+    @Column(name = "bg_url")
     private String bgUrl;
 
     @Column(name = "created", nullable = false)
     private String createdAt;
 
-    public Post(String title, String content, String user, String bgUrl, String createdAt) {
+    @Column(name = "likes", nullable = false)
+    private Long likes;
+
+    public Post(String title, String content, String user, String bgUrl, String createdAt, Long likes) {
         this.title = title;
         this.content = content;
         this.user = user;
         this.bgUrl = bgUrl;
         this.createdAt = createdAt;
+        this.likes = likes;
     }
 
     public Post() {
@@ -84,6 +88,14 @@ public class Post {
 
     public void setCreatedAt(String createdAt) {
         this.createdAt = createdAt;
+    }
+
+    public Long getLikes() {
+        return likes;
+    }
+
+    public void setLikes(Long likes) {
+        this.likes = likes;
     }
 
 }
