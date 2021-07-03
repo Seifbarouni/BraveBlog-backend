@@ -23,12 +23,11 @@ public class LikesService implements ILikesService {
     private PostsRepository postsRepository;
 
     @Override
-    public Boolean didLike(Long postId, Long userId) {
+    public String didLike(Long postId, Long userId) {
         Likes likesOp = likesRepository.getLike(postId, userId);
-        System.out.println(likesOp);
         if (likesOp != null)
-            return true;
-        return false;
+            return "liked";
+        return "not liked";
     }
 
     @Override

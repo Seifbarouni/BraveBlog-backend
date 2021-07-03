@@ -14,7 +14,7 @@ import seif.app.blaviken.Services.ILikesService;
 
 @RestController
 @RequestMapping("/l")
-@CrossOrigin("*")
+@CrossOrigin(origins = "http://localhost:3000", exposedHeaders = "**")
 public class LikesController {
     @Autowired
     private ILikesService likesService;
@@ -25,7 +25,7 @@ public class LikesController {
     }
 
     @GetMapping("/didLike/{postId}/{userId}")
-    public Boolean didLike(@PathVariable(name = "postId") Long postId, @PathVariable(name = "userId") Long userId) {
+    public String didLike(@PathVariable(name = "postId") Long postId, @PathVariable(name = "userId") Long userId) {
         return likesService.didLike(postId, userId);
     }
 

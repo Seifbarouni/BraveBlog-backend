@@ -5,7 +5,7 @@ import java.util.List;
 import seif.app.blaviken.Models.Likes;
 
 public interface ILikesService {
-    public Boolean didLike(Long postId, Long userId);
+    public String didLike(Long postId, Long userId);
 
     public List<Long> getLikesByUserId(Long userId);
 
