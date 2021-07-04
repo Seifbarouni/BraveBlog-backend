@@ -28,4 +28,9 @@ public class PostsController {
     public Post getPostById(@PathVariable(name = "id") Long id) {
         return postsService.getPostById(id);
     }
+
+    @GetMapping("/us/{user}")
+    public List<Post> getPostsByUser(@PathVariable(name = "user") String user) {
+        return postsService.getPostsByUser(user);
+    }
 }

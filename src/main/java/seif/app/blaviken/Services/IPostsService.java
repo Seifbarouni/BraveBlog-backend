@@ -9,5 +9,7 @@ public interface IPostsService {
 
     public Post getPostById(Long id);
 
-    public Post getPostByUser(String user);
+    // public Post getPostByUser(String user);
+
+    public List<Post> getPostsByUser(String user);
 }

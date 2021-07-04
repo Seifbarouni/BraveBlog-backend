@@ -30,9 +30,11 @@ public class PostsService implements IPostsService {
     }
 
     @Override
-    public Post getPostByUser(String user) {
-        Optional<Post> post = postsRepository.findByUser(user);
-        return post.get();
+    public List<Post> getPostsByUser(String user) {
+        Optional<List<Post>> postsOp = postsRepository.findByUser(user);
+        if (postsOp.isPresent())
+            return postsOp.get();
+        return new ArrayList<Post>();
     }
 
 }
