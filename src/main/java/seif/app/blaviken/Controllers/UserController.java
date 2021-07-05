@@ -16,6 +16,7 @@ import org.springframework.web.bind.annotation.RestController;
 import seif.app.blaviken.Models.AuthenticationRequest;
 import seif.app.blaviken.Models.AuthenticationResponse;
 import seif.app.blaviken.Models.MyUserDetails;
+import seif.app.blaviken.Models.UpdateUser;
 import seif.app.blaviken.Models.User;
 import seif.app.blaviken.Models.UserRegisterModel;
 import seif.app.blaviken.Services.MyUserDetailsService;
@@ -39,6 +40,12 @@ public class UserController {
     @GetMapping("/getUser/{username}")
     public String getUserImageByUsername(@PathVariable(name = "username") String username) {
         return userService.getUserByUsername(username).get().getPicUrl();
+    }
+
+    @PostMapping("/updateUser")
+    public String updateUser(@RequestBody UpdateUser data) {
+        return userService.updateUser(data.getUsername(), data.getNewUsername(), data.getNewEmail(),
+                data.getNewImage());
     }
 
     @PostMapping("/register")
