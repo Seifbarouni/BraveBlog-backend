@@ -37,4 +37,12 @@ public class PostsService implements IPostsService {
         return new ArrayList<Post>();
     }
 
+    @Override
+    public String addPost(Post post) {
+        post = postsRepository.save(post);
+        if (post != null)
+            return "Success";
+        return "Error";
+    }
+
 }

@@ -4,6 +4,7 @@ import javax.persistence.Column;
 import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
 import javax.persistence.Id;
+import javax.persistence.Lob;
 import javax.persistence.Table;
 
 @Entity
@@ -15,6 +16,7 @@ public class Post {
     @Column(name = "title", nullable = false)
     private String title;
 
+    @Lob
     @Column(name = "content", nullable = false)
     private String content;
 
