@@ -45,4 +45,14 @@ public class PostsService implements IPostsService {
         return "Error";
     }
 
+    @Override
+    public Long getTotalLikes(String user) {
+        Long res = 0L;
+        List<Post> posts = getPostsByUser(user);
+        for (Post post : posts) {
+            res += post.getLikes();
+        }
+        return res;
+    }
+
 }

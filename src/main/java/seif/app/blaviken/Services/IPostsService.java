@@ -12,4 +12,6 @@ public interface IPostsService {
     public String addPost(Post post);
 
     public List<Post> getPostsByUser(String user);
+
+    public Long getTotalLikes(String user);
 }

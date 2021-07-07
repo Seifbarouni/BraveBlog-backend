@@ -37,6 +37,11 @@ public class PostsController {
         return postsService.getPostsByUser(user);
     }
 
+    @GetMapping("/likes/{user}")
+    public String getTotalPostLikes(@PathVariable(name = "user") String user) {
+        return postsService.getTotalLikes(user).toString();
+    }
+
     @PostMapping("/addPost")
     public String addPost(@RequestBody Post post) {
         return postsService.addPost(post);
