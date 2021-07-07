@@ -11,7 +11,6 @@ import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
 
-import seif.app.blaviken.Data.PostsRepository;
 import seif.app.blaviken.Models.Post;
 import seif.app.blaviken.Services.IPostsService;
 
