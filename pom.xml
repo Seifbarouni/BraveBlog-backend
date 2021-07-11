@@ -8,10 +8,10 @@
 		<relativePath />
 	</parent>
 	<groupId>seif.app</groupId>
-	<artifactId>blaviken</artifactId>
+	<artifactId>braveBlog</artifactId>
 	<version>0.0.1-SNAPSHOT</version>
-	<name>blaviken</name>
-	<description>Blaviken api</description>
+	<name>Brave Blog</name>
+	<description>Brave Blog api</description>
 	<dependencies>
 		<dependency>
 			<groupId>org.springframework.boot</groupId>
