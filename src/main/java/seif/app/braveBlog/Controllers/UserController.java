@@ -24,7 +24,7 @@ import seif.app.braveBlog.Services.UserService;
 import seif.app.braveBlog.Utils.Utils;
 
 @RestController
-@CrossOrigin
+@CrossOrigin(origins = "https://wonderful-knuth-debaec.netlify.app/", exposedHeaders = "**")
 public class UserController {
     @Autowired
     private Utils jwtUtil;

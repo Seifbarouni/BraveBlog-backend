@@ -16,7 +16,7 @@ import seif.app.braveBlog.Services.IPostsService;
 
 @RestController
 @RequestMapping("/api/v1/posts")
-@CrossOrigin
+@CrossOrigin(origins = "https://wonderful-knuth-debaec.netlify.app/", exposedHeaders = "**")
 public class PostsController {
     @Autowired
     private IPostsService postsService;
