@@ -46,4 +46,10 @@ public class PostsController {
     public String addPost(@RequestBody Post post) {
         return postsService.addPost(post);
     }
+
+    @GetMapping("/deletePost/{id}")
+    public String deletePost(@PathVariable(name = "id") Long id) {
+        return postsService.deletePost(id);
+    }
+
 }

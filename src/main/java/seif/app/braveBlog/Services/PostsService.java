@@ -55,4 +55,10 @@ public class PostsService implements IPostsService {
         return res;
     }
 
+    @Override
+    public String deletePost(Long id) {
+        postsRepository.deleteById(id);
+        return "Success";
+    }
+
 }
