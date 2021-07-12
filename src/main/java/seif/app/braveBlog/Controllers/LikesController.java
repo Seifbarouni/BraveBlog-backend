@@ -15,6 +15,7 @@ import seif.app.braveBlog.Services.ILikesService;
 @RestController
 @RequestMapping("/l")
 @CrossOrigin(origins = "https://wonderful-knuth-debaec.netlify.app/", exposedHeaders = "**")
+
 public class LikesController {
     @Autowired
     private ILikesService likesService;
