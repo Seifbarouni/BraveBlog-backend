@@ -1,5 +1,7 @@
 package seif.app.braveBlog.Services;
 
+import java.util.ArrayList;
+import java.util.List;
 import java.util.Optional;
 
 import org.springframework.beans.factory.annotation.Autowired;
@@ -61,6 +63,14 @@ public class SavesService implements ISavesService {
             return "Error";
         }
         return "Error";
+    }
+
+    @Override
+    public List<Saves> getSavesByUserId(Long userId) {
+        Optional<List<Saves>> savesOp = savesRepository.findByUserId(userId);
+        if (savesOp.isPresent())
+            return savesOp.get();
+        return new ArrayList<Saves>();
     }
 
 }

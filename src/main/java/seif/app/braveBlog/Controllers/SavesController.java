@@ -1,5 +1,7 @@
 package seif.app.braveBlog.Controllers;
 
+import java.util.List;
+
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.CrossOrigin;
 import org.springframework.web.bind.annotation.GetMapping;
@@ -32,6 +34,11 @@ public class SavesController {
         @GetMapping("/unsave/{postId}/{userId}")
         public String unsave(@PathVariable(name = "postId") Long postId, @PathVariable(name = "userId") Long userId) {
                 return savesService.unsavePost(new Saves(postId, userId));
+        }
+
+        @GetMapping("/getSavedPosts/{userId}")
+        public List<Saves> getPosts(@PathVariable(name = "userId") Long userId) {
+                return savesService.getSavesByUserId(userId);
         }
 
 }
