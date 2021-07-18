@@ -32,13 +32,17 @@ public class Post {
     @Column(name = "likes", nullable = false)
     private Long likes;
 
-    public Post(String title, String content, String user, String bgUrl, String createdAt, Long likes) {
+    @Column(name = "saves", nullable = true)
+    private Long saves = 0L;
+
+    public Post(String title, String content, String user, String bgUrl, String createdAt, Long likes, Long saves) {
         this.title = title;
         this.content = content;
         this.user = user;
         this.bgUrl = bgUrl;
         this.createdAt = createdAt;
         this.likes = likes;
+        this.saves = saves;
     }
 
     public Post() {
@@ -98,6 +102,14 @@ public class Post {
 
     public void setLikes(Long likes) {
         this.likes = likes;
+    }
+
+    public Long getSaves() {
+        return saves;
+    }
+
+    public void setSaves(Long saves) {
+        this.saves = saves;
     }
 
 }
