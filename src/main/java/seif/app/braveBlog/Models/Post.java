@@ -32,7 +32,7 @@ public class Post {
     @Column(name = "likes", nullable = false)
     private Long likes;
 
-    @Column(name = "saves", nullable = true)
+    @Column(name = "saves", nullable = false)
     private Long saves = 0L;
 
     public Post(String title, String content, String user, String bgUrl, String createdAt, Long likes, Long saves) {
