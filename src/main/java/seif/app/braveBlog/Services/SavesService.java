@@ -33,7 +33,10 @@ public class SavesService implements ISavesService {
         if (post.isPresent()) {
             savesRepository.save(saves);
             Post res = post.get();
-            res.setSaves(res.getSaves() + 1);
+            if (res.getSaves() != null)
+                res.setSaves(res.getSaves() + 1);
+            else
+                res.setSaves(1L);
             res = postsRepository.save(res);
             if (res != null)
                 return "Success";
@@ -48,7 +51,10 @@ public class SavesService implements ISavesService {
         if (post.isPresent()) {
             savesRepository.delete(saves);
             Post res = post.get();
-            res.setSaves(res.getSaves() - 1);
+            if (res.getSaves() != null)
+                res.setSaves(res.getSaves() - 1);
+            else
+                res.setSaves(0L);
             res = postsRepository.save(res);
             if (res != null)
                 return "Success";
