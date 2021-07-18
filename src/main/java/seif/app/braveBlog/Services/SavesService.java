@@ -3,12 +3,14 @@ package seif.app.braveBlog.Services;
 import java.util.Optional;
 
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.stereotype.Service;
 
 import seif.app.braveBlog.Data.PostsRepository;
 import seif.app.braveBlog.Data.SavesRepository;
 import seif.app.braveBlog.Models.Post;
 import seif.app.braveBlog.Models.Saves;
 
+@Service
 public class SavesService implements ISavesService {
 
     @Autowired

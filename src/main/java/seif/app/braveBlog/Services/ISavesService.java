@@ -1,7 +1,5 @@
 package seif.app.braveBlog.Services;
 
-import java.util.List;
-
 import seif.app.braveBlog.Models.Saves;
 
 public interface ISavesService {
