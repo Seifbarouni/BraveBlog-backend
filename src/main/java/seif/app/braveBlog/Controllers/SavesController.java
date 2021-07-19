@@ -37,7 +37,7 @@ public class SavesController {
                 return savesService.unsavePost(new Saves(postId, userId));
         }
 
-        @GetMapping("/getSavedPosts/{userId}/{username}")
+        @GetMapping("/getSavedPosts/{userId}")
         public List<Post> getPosts(@PathVariable(name = "userId") Long userId) {
                 return savesService.getSavesByUserId(userId);
         }
