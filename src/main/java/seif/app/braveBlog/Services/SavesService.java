@@ -66,11 +66,19 @@ public class SavesService implements ISavesService {
     }
 
     @Override
-    public List<Saves> getSavesByUserId(Long userId) {
+    public List<Post> getSavesByUserId(Long userId) {
         Optional<List<Saves>> savesOp = savesRepository.findByUserId(userId);
-        if (savesOp.isPresent())
-            return savesOp.get();
-        return new ArrayList<Saves>();
+        List<Post> res = new ArrayList<Post>();
+        if (savesOp.isPresent()) {
+            List<Saves> saves = savesOp.get();
+            for (Saves save : saves) {
+                Optional<Post> post = postsRepository.findById(save.getPostId());
+                if (post.isPresent())
+                    res.add(post.get());
+            }
+        }
+
+        return res;
     }
 
 }

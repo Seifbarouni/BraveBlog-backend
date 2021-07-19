@@ -9,6 +9,7 @@ import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
 
+import seif.app.braveBlog.Models.Post;
 import seif.app.braveBlog.Models.Saves;
 import seif.app.braveBlog.Services.ISavesService;
 
@@ -36,8 +37,8 @@ public class SavesController {
                 return savesService.unsavePost(new Saves(postId, userId));
         }
 
-        @GetMapping("/getSavedPosts/{userId}")
-        public List<Saves> getPosts(@PathVariable(name = "userId") Long userId) {
+        @GetMapping("/getSavedPosts/{userId}/{username}")
+        public List<Post> getPosts(@PathVariable(name = "userId") Long userId) {
                 return savesService.getSavesByUserId(userId);
         }
 
