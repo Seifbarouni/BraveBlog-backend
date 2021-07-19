@@ -19,6 +19,6 @@ public interface SavesRepository extends JpaRepository<Saves, Long> {
 
     @Modifying
     @Transactional
-    @Query("DELETE FROM Saves  WHERE postId = ?1 AND userId = ?2")
-    void deleteSave(Long postId, Long userId);
+    @Query("DELETE FROM Saves  WHERE postId = ?1")
+    void deleteSave(Long postId);
 }

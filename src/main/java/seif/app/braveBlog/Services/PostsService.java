@@ -8,12 +8,16 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
 import seif.app.braveBlog.Data.PostsRepository;
+import seif.app.braveBlog.Data.SavesRepository;
 import seif.app.braveBlog.Models.Post;
 
 @Service
 public class PostsService implements IPostsService {
     @Autowired
     private PostsRepository postsRepository;
+
+    @Autowired
+    private SavesRepository savesRepository;
 
     @Override
     public List<Post> getAllPosts() {
@@ -58,6 +62,7 @@ public class PostsService implements IPostsService {
     @Override
     public String deletePost(Long id) {
         postsRepository.deleteById(id);
+        savesRepository.deleteSave(id);
         return "Success";
     }
 
