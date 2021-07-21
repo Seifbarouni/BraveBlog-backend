@@ -15,8 +15,7 @@ import seif.app.braveBlog.Services.ISavesService;
 
 @RestController
 @RequestMapping("/s")
-@CrossOrigin(origins = { "https://wonderful-knuth-debaec.netlify.app/",
-                "http://localhost:3000" }, exposedHeaders = "**")
+@CrossOrigin(origins = { "https://wonderful-knuth-debaec.netlify.app/" }, exposedHeaders = "**")
 public class SavesController {
 
         @Autowired
