@@ -7,4 +7,5 @@ RUN mvn install -DskipTests
 FROM openjdk:11.0.13-jre-slim-buster
 WORKDIR /root/
 COPY --from=builder /app/target/backend-service.jar .
+EXPOSE 8080
 ENTRYPOINT ["java", "-jar","backend-service.jar"]
